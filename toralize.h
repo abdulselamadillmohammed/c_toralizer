@@ -2,7 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
+#include <unistd.h>         // for close()
+// #include <sys/types.h>      // for socket types
+#include <sys/socket.h>     // for socket(), connect()
+#include <netinet/in.h>     // for sockaddr_in, htons()
+#include <arpa/inet.h>      // for inet_addr()
+
+
+// socket()
+// connect()
+// close()
+// htons()
+// inet_addr()
 
 #define PROXY       "127.0.0.1"
 #define PROXYPORT   9050
@@ -28,6 +39,8 @@ struct proxy_request {
     unsigned char userid[8];
 };
 
+typedef struct proxy_request Req;
+
 /*
 
 		+----+----+----+----+----+----+----+----+
@@ -43,3 +56,6 @@ struct proxy_response {
     int16 _;
     int32 __;
 };
+
+typedef struct proxy_response Res;
+
