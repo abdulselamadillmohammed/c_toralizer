@@ -39,7 +39,7 @@ struct proxy_request {
     int8 cd;
     int16 dstport;
     int32 dstip;
-    unsigned char userid[8];
+    unsigned char username[8];
 };
 
 typedef struct proxy_request Req;
@@ -62,5 +62,5 @@ struct proxy_response {
 
 typedef struct proxy_response Res;
 
-Req *request(const char *, const int)
-int main(int, char**)
+Req *request(const char *, const int);
+int main(int, char**);
