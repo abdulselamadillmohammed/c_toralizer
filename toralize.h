@@ -27,3 +27,19 @@ struct proxy_request {
     int32 dstip;
     unsigned char userid[8];
 };
+
+/*
+
+		+----+----+----+----+----+----+----+----+
+		| VN | CD | DSTPORT |      DSTIP        |
+		+----+----+----+----+----+----+----+----+
+           1    1      2              4
+
+*/
+
+struct proxy_response {
+    int8 vn;
+    int8 cd;
+    int16 _;
+    int32 __;
+};
