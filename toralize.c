@@ -20,5 +20,5 @@ int main(int argc, char *argv[]){
 
     host = argv[1];
     port = argv[2];
-
+    
 }

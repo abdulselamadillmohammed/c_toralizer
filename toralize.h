@@ -19,3 +19,11 @@ typedef unsigned int int32;
     	   1    1      2              4           variable       1
 
 */
+
+struct proxy_request {
+    int8 vn;
+    int8 cd;
+    int16 dstport;
+    int32 dstip;
+    unsigned char userid[8];
+};
