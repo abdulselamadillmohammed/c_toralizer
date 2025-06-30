@@ -16,7 +16,7 @@
 // inet_addr()
 
 #define PROXY       "127.0.0.1"
-#define PROXYPORT   9050
+#define PROXYPORT   9150
 
 typedef unsigned char int8;
 typedef unsigned short int int16;
@@ -59,3 +59,5 @@ struct proxy_response {
 
 typedef struct proxy_response Res;
 
+Req *request(const char *, const int)
+int main(int, char**);
