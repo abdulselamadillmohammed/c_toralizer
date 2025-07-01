@@ -84,8 +84,11 @@ int main(int argc, char *argv[]){
         return -1;
     }
 
+    printf("Sucessfully connected through the proxy to "
+    "%s:%d\n", host, port);
+    
     close(s);
+    free(req);
 
     return 0;
-
 }
