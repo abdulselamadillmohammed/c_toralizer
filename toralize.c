@@ -18,7 +18,7 @@ Req *request(const char *dstip, const int dstport){
     req->cd = 1;
     req->dstport = htons(dstport);
     req->dstip = inet_addr(dstip);    
-    strncpy(req->username, USERNAME, 8);
+    strncpy((char *)req->userid, USERNAME, 8);
 
     return req; 
 }
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]){
         return -1;
     }
 
-    res = buf;
+    res =(Res *)buf;
     success = (res->cd == 90);
 
     if (!success){
