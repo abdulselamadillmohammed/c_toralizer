@@ -28,7 +28,9 @@ int main(int argc, char *argv[]){
     int port, s;
     struct sockaddr_in sock;
     Req *req;
+    Res *res;
     char buf[ressize];
+    int success;
 
 
     if (argc < 3){
@@ -64,6 +66,20 @@ int main(int argc, char *argv[]){
         perror("read");
         free(req);
         close(s);
+
+        return -1;
+    }
+
+    res = buf;
+    success = (res->cd == 90);
+
+    if (!success){
+        fprintf(stderr, "Unable to traverse" 
+            "the proxy, error code: %d\n",
+        res->cd);
+
+        close(s);
+        free(req);
 
         return -1;
     }
