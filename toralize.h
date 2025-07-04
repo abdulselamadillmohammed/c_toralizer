@@ -7,7 +7,8 @@
 #include <sys/socket.h>     // for socket(), connect()
 #include <netinet/in.h>     // for sockaddr_in, htons()
 #include <arpa/inet.h>      // for inet_addr()
-
+#include <sys/types.h>
+#include <dlfcn.h>
 
 // socket()
 // connect()
@@ -62,5 +63,5 @@ struct proxy_response {
 
 typedef struct proxy_response Res;
 
-Req *request(const char *, const int);
-int main(int, char**);
+Req *request(struct sockaddr_in *);
+int connect(int, const struct sockaddr*, socklen_t);
