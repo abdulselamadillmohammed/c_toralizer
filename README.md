@@ -50,8 +50,9 @@ Run any command through Tor:
 
 ## Example
 
-./toralize curl -X POST http://127.0.0.1:8000/api/token/ \
- -d "username=yourusername&password=yourpassword"
+```bash
+./toralize curl -X POST http://127.0.0.1:8000/api/token/ \ -d "username=yourusername&password=yourpassword"
+```
 
 ## Disclaimer
 
